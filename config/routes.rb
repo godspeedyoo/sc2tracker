@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-
-  root 'welcome#index'
 
   get '/login', :to => 'sessions#new', :as => :login
   match '/auth/:provider/callback', :to => 'sessions#create', via: [:get, :post]
@@ -11,8 +8,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
