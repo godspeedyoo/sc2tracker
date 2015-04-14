@@ -31,6 +31,7 @@ group :development, :test do
 
   # Store API keys
   gem 'dotenv-rails'
+
 end
 
 # Angular
@@ -41,3 +42,4 @@ gem 'bower-rails'
 # Battlenet OmniAuth
 gem 'omniauth-bnet'
 
+gem 'httplog'

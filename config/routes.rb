@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  match '/helper', :to => 'sessions#help', via: :get
   get '/login', :to => 'sessions#new', :as => :login
-  match '/auth/:provider/callback', :to => 'sessions#create', via: [:get, :post]
+  match '/auth/bnet/callback', :to => 'sessions#create', via: [:get]
   match '/auth/failure', :to => 'sessions#failure', via: [:get]
 
   get 'example' => 'example#index'
