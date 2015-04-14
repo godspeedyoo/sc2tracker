@@ -4,7 +4,7 @@
 <p>YOU ARE LOGGED IN</p>
 <%= session['user_id'] %>
 <%= session['user_info'] %>
-
+<%= session['access_token'] %>
 <% else %>
 <%= link_to 'login', login_path %>
 <% end %>
