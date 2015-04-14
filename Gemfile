@@ -43,3 +43,5 @@ gem 'bower-rails'
 gem 'omniauth-bnet'
 
 gem 'httplog'
+
+gem 'httparty'

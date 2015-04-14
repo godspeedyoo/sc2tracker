@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require angular
 //= require angular-rails-templates
+//= require example
+//= require_tree ../../../node_modules
+//= require_tree ../../../node_modules/battlenet-api
 
 //= require angular-app/app
 //= require_tree ./angular-app/templates

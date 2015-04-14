@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     session[:user_id] = auth["uid"]
     session[:user_info] = auth["info"]
-    redirect OmniAuth.config.full_host
+    session[:access_token] = 
+    redirect_to OmniAuth.config.full_host
   end
 
   def failure
