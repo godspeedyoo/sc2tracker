@@ -9,5 +9,6 @@ class SessionsController < ApplicationController
   end
 
   def failure
+    @message = params[:message]
   end
 end
