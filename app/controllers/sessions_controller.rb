@@ -5,17 +5,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    puts "*"*50
-    puts "PARAMS:"
-    puts params
-    puts session
     auth = request.env["omniauth.auth"]
-
-    session[:user_id] = auth["uid"]
-    session[:user_info] = auth["info"]
-    session[:access_token] = auth.credentials.token
-    response = HTTParty.get('https://us.api.battle.net/sc2/profile/user?access_token=' + session[:access_token]) 
-    byebug
+    store_current_user_credentials auth
     redirect_to OmniAuth.config.full_host
   end
 

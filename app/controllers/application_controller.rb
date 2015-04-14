@@ -22,4 +22,16 @@ class ApplicationController < ActionController::Base
   def current_user_info
     session[:user_info]
   end
+
+  def get_player_profile
+    return false unless session["access_token"]
+    response = HTTParty.get('https://us.api.battle.net/sc2/profile/user?access_token=' + session[:access_token]) 
+  end
+
+  def store_current_user_credentials auth
+    session[:user_id] = auth["uid"]
+    session[:user_info] = auth["info"]
+    session[:access_token] = auth.credentials.token
+  end
+
 end

@@ -2,9 +2,7 @@
 
 <% if current_user %>
 <p>YOU ARE LOGGED IN</p>
-<%= session['user_id'] %>
-<%= session['user_info'] %>
-<%= session['access_token'] %>
+<%= @response.body %>
 <% else %>
 <%= link_to 'login', login_path %>
 <% end %>
