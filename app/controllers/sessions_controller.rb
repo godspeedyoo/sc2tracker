@@ -4,8 +4,9 @@ class SessionsController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
-
-    render :text => auth.inspect
+    session[:user_id] = auth["uid"]
+    session[:user_info] = auth["info"]
+    redirect OmniAuth.config.full_host
   end
 
   def failure
