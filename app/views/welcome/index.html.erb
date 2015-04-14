@@ -1,5 +1,7 @@
 <h1>OAuth</h1>
 
 <% if current_user %>
+<p>YOU ARE LOGGED IN</p>
 <% else %>
 <%= link_to 'login', login_path %>
+<% end %>
