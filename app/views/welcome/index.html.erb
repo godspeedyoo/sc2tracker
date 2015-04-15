@@ -2,8 +2,8 @@
 
 <% if current_user %>
 <p>YOU ARE LOGGED IN</p>
-<%= @response.body %>
-<%= link_to 'logout', logout_path %>
+<%= link_to 'logout', auth_logout_path %>
+<p><%= @response.body %></p>
 <% else %>
 <%= link_to 'login', login_path %>
 <% end %>
