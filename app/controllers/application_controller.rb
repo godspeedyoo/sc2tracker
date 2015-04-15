@@ -34,4 +34,10 @@ class ApplicationController < ActionController::Base
     session[:access_token] = auth.credentials.token
   end
 
+  def logout_current_user 
+    session[:user_id] = nil
+    session[:user_info] = nil
+    session[:access_token] = nil
+  end
+
 end

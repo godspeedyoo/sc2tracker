@@ -13,4 +13,9 @@ class SessionsController < ApplicationController
   def failure
     @message = params[:message]
   end
+
+  def logout
+    logout_current_user
+  end
+
 end

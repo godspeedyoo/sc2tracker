@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'profile/index'
+
   get '/login', :to => 'sessions#new', :as => :login
   match '/auth/bnet/callback', :to => 'sessions#create', via: [:get]
   match '/auth/failure', :to => 'sessions#failure', via: [:get]
-
+  match '/auth/logout', :to => 'sessions#logout', via: [:get]
+  
   get 'example' => 'example#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

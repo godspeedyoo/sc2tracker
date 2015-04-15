@@ -3,6 +3,7 @@
 <% if current_user %>
 <p>YOU ARE LOGGED IN</p>
 <%= @response.body %>
+<%= link_to 'logout', logout_path %>
 <% else %>
 <%= link_to 'login', login_path %>
 <% end %>
