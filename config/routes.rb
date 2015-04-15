@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   get 'profile/index'
 
-  get '/login', :to => 'sessions#new', :as => :login
   match '/auth/bnet/callback', :to => 'sessions#create', via: [:get]
   match '/auth/failure', :to => 'sessions#failure', via: [:get]
   match '/auth/logout', :to => 'sessions#logout', via: [:get]

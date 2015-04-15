@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
   def logout
     logout_current_user
     redirect_to '/'
+    return
   end
 
 end

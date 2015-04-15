@@ -2,8 +2,9 @@
 
 <% if current_user %>
 <p>YOU ARE LOGGED IN</p>
-<%= link_to 'logout', auth_logout_path %>
+<%= link_to 'logout', '/auth/logout' %>
+<%= link_to 'logout of Battle.net', 'http://battle.net/login/logout' %>
 <p><%= @response.body %></p>
 <% else %>
-<%= link_to 'login', login_path %>
+<%= link_to 'login', '/auth/bnet' %>
 <% end %>
