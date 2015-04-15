@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     store_current_user_credentials auth
     redirect_to OmniAuth.config.full_host
+    return
   end
 
   def failure
