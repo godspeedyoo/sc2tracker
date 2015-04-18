@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'profile/data' => 'profile#data'
   get 'profile' => 'profile#index'
   get 'profile/token' => 'sessions#token'
 
