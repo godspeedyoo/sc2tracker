@@ -1,7 +1,7 @@
-var sc2 = angular
-    .module('app.sc2',[
+var app = angular
+    .module('app',[
 ]);
 
-sc2.run(function() {
+app.run(function() {
     console.log('sc2 running');
 });  

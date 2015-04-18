@@ -1,9 +1,10 @@
-angular.module('app.sc2')
-.controller("ProfileIndexCtrl", ['$http','$scope','AuthService',
-  function($http, $scope, AuthService) {
+angular.module('app', ["appServices"])
+.controller("ProfileIndexCtrl", ['$http','$scope','AuthFactory',
+  function($http, $scope, AuthFactory) {
     console.log('ProfileCtrl running');
     $scope.greeting = "Hello angular and rails";
-    AuthService.getAccessToken();
+    debugger;
+    $scope.token = AuthFactory.setAccessToken();
   }
 
 
