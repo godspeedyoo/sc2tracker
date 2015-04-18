@@ -3,8 +3,9 @@ angular.module('app', ["appServices"])
   function($http, $scope, AuthFactory) {
     console.log('ProfileCtrl running');
     $scope.greeting = "Hello angular and rails";
-    debugger;
-    $scope.token = AuthFactory.setAccessToken();
+    AuthFactory.getAccessToken().then(function(response) {
+      $scope.token = response.data;
+    });
   }
 
 

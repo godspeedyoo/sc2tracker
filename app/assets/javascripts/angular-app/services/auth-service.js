@@ -4,16 +4,8 @@ angular.module('appServices',[])
   token = null;
 
   return {
-
-    setAccessToken: function() {
-      $http.get('/profile/token')
-        .then(function(response) {
-          token = response.data;
-      });
-    },
-
     getAccessToken: function() {
-      return token;
+      return $http.get('/profile/token')
     }
   }
 
