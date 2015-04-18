@@ -22,4 +22,9 @@ class SessionsController < ApplicationController
     return
   end
 
+  def token
+
+    render json: session['access_token'].to_json
+  end
+
 end
