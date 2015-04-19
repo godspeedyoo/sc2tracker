@@ -1,9 +1,12 @@
-<div ng-view>
-  <div ng-app="app" ng-controller="ProfileIndexCtrl">
-
+<div ng-app="app">
+  <div ng-controller="ProfileIndexCtrl">
     <p>{{ name }}</p>
     <p>{{ id }}</p>
-    <p>{{ profile }}</p>
-    <!-- <button ng-click="getMatches()"></button> -->
   </div>
+
+  <div ng-controller="MatchesIndexCtrl">
+    <div>{{ matches }}</div>
+  </div>
+
 </div>
+

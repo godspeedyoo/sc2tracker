@@ -7,4 +7,12 @@ angular.module('appServices',[])
     }
   }
 
-}]);
+}])
+.factory('MatchesFactory',['$http', function($http) {
+  return {
+    getMatches: function() {
+      return $http.get('matches/data');
+    }
+  }
+
+}])
