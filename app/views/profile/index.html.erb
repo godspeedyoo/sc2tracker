@@ -10,15 +10,15 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Decision</th>
-              <th>Map</th>
-              <th>Speed</th>
-              <th>Type</th>
+              <th ng-click="setFilter('date')">Date</th>
+              <th ng-click="setFilter('decision')">Decision</th>
+              <th ng-click="setFilter('map')">Map</th>
+              <th ng-click="setFilter('speed')">Speed</th>
+              <th ng-click="setFilter('type')">Type</th>
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="match in matches">
+            <tr ng-repeat="match in matches | orderBy: filterString">
               <td>{{ match.date * 1000 | date: 'MMM dd yyyy hh:mm a'}}</td>
               <td>{{ match.decision }}</td>
               <td>{{ match.map }}</td>

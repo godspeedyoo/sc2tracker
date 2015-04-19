@@ -4,6 +4,25 @@ angular.module('app', ['appServices'])
     MatchesFactory.getMatches().then(function(response) {
       $scope.matches = response.data.matches;
     });
+    $scope.filterString = "-date";
+
+    $scope.setFilter = function(newFilter) {
+      if ($scope.filterString === undefined) { 
+        $scope.filterString = newFilter;
+        return;
+      }
+
+      if ($scope.filterString.indexOf(newFilter) != -1) {
+        if ($scope.filterString.indexOf('-') != -1) {
+          $scope.filterString = '+' + newFilter;
+        } else {
+          $scope.filterString = '-' + newFilter;
+        }
+      } else {
+        $scope.filterString = '+' + newFilter;
+      }
+    }
+
   }
 ])
 .controller('ProfileIndexCtrl', ['$http','$scope','ProfileFactory',
