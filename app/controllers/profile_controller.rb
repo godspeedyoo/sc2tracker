@@ -5,6 +5,7 @@ class ProfileController < ApplicationController
     session['id'] = profile_data['id']
     session['realm'] = profile_data['realm']
     session['name'] = profile_data['displayName']
+    
     render :json => data.to_json
   end
 
