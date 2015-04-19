@@ -1,10 +1,14 @@
 class ProfileController < ApplicationController
   def data
-    @response = HTTParty.get('https://us.api.battle.net/sc2/profile/user?access_token=' + session[:access_token])
-    render :json => @response.to_json
+    data = HTTParty.get('https://us.api.battle.net/sc2/profile/user?access_token=' + session[:access_token])
+    profile_data = data['characters'].first
+    session['id'] = profile_data['id']
+    session['realm'] = profile_data['realm']
+    session['name'] = profile_data['displayName']
+    render :json => data.to_json
   end
 
   def index
-    @response = HTTParty.get('https://us.api.battle.net/sc2/profile/user?access_token=' + session[:access_token])
+    @data = HTTParty.get('https://us.api.battle.net/sc2/profile/user?access_token=' + session[:access_token])
   end
 end

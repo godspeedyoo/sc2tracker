@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'profile/data' => 'profile#data'
   get 'profile' => 'profile#index'
+  get 'profile/data' => 'profile#data'
   get 'profile/token' => 'sessions#token'
+
+  get 'matches' => 'matches#index'
+  get 'matches/data' => 'matches#data'
+
 
   match '/auth/bnet/callback', :to => 'sessions#create', via: [:get]
   match '/auth/failure', :to => 'sessions#failure', via: [:get]
