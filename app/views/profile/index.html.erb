@@ -5,28 +5,29 @@
   </div>
 
   <div ng-controller="MatchesIndexCtrl">
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Decision</th>
-            <th>Map</th>
-            <th>Speed</th>
-            <th>Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="match in matches">
-            <td>{{ match.date * 1000 | date: 'MMM dd yyyy hh:mm a'}}</td>
-            <td>{{ match.decision }}</td>
-            <td>{{ match.map }}</td>
-            <td>{{ match.speed }}</td>
-            <td>{{ match.type }}</td>
-          </tr>  
-        </tbody>
-      </table>
-    </div>
+    <div class="col-md-offset-2 col-md-8 col-md-offset-2">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Decision</th>
+              <th>Map</th>
+              <th>Speed</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="match in matches">
+              <td>{{ match.date * 1000 | date: 'MMM dd yyyy hh:mm a'}}</td>
+              <td>{{ match.decision }}</td>
+              <td>{{ match.map }}</td>
+              <td>{{ match.speed }}</td>
+              <td>{{ match.type }}</td>
+            </tr>  
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
