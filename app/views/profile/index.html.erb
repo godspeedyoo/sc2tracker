@@ -5,7 +5,29 @@
   </div>
 
   <div ng-controller="MatchesIndexCtrl">
-    <div>{{ matches }}</div>
+    <div class="row">
+      <table>
+        <thead>
+          <tr>
+            <td>Date</td>
+            <td>Decision</td>
+            <td>Map</td>
+            <td>Speed</td>
+            <td>Type</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="match in matches">
+            <td>{{ match.date }}</td>
+            <td>{{ match.decision }}</td>
+            <td>{{ match.map }}</td>
+            <td>{{ match.speed }}</td>
+            <td>{{ match.type }}</td>
+          </tr>  
+        </tbody>
+      </table>
+    </div>
+    </div>
   </div>
 
 </div>

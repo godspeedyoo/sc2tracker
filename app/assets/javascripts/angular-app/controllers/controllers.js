@@ -2,7 +2,7 @@ angular.module('app', ['appServices'])
 .controller('MatchesIndexCtrl', ['$http','$scope', 'MatchesFactory', 
   function($http, $scope, MatchesFactory) {
     MatchesFactory.getMatches().then(function(response) {
-      $scope.matches = response.data;
+      $scope.matches = response.data.matches;
     });
   }
 ])
