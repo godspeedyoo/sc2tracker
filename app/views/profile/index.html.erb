@@ -5,20 +5,20 @@
   </div>
 
   <div ng-controller="MatchesIndexCtrl">
-    <div class="row">
-      <table>
+    <div class="table-responsive">
+      <table class="table table-striped">
         <thead>
           <tr>
-            <td>Date</td>
-            <td>Decision</td>
-            <td>Map</td>
-            <td>Speed</td>
-            <td>Type</td>
+            <th>Date</th>
+            <th>Decision</th>
+            <th>Map</th>
+            <th>Speed</th>
+            <th>Type</th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="match in matches">
-            <td>{{ match.date }}</td>
+            <td>{{ match.date * 1000 | date: 'MMM dd yyyy hh:mm a'}}</td>
             <td>{{ match.decision }}</td>
             <td>{{ match.map }}</td>
             <td>{{ match.speed }}</td>
